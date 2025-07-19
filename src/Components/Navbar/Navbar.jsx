@@ -10,18 +10,20 @@ function Navbar() {
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
-        <img className="menu-icon" src={menu_icon} alt="" />
-        <img className="logo" src={logo} alt="" />
+        <img className="menu-icon" src={menu_icon} />
+        <img className="logo" src={logo} />
       </div>
       <div className="nav-middle flex-div">
-        <input type="text" placeholder="Search" />
-        <img src={search_icon} alt="" />
+        <div className="search-box flex-div">
+          <input type="text" placeholder="Search" />
+          <img src={search_icon} />
+        </div>
       </div>
       <div className="nav-right flex-div">
-        <img src={upload_icon} alt="" />
-        <img src={more_icon} alt="" />
-        <img src={notification_icon} alt="" />
-        <img src={profile_icon} className="user-icon" alt="" />
+        <img src={upload_icon} />
+        <img src={more_icon} />
+        <img src={notification_icon} />
+        <img src={profile_icon} className="user-icon" />
       </div>
     </nav>
   );
