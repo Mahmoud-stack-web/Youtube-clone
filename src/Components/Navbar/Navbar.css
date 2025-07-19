@@ -1,46 +1,94 @@
+/* Utility class */
+.flex-div {
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar container */
 nav {
-  padding: 10px 2%;
+  padding: 10px 16px;
   justify-content: space-between;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 
-.nav-left .menu-icon {
-  width: 22px;
-  margin-right: 25px;
+/* Left section */
+.nav-left {
+  gap: 16px;
 }
 
-.nav-left .logo {
-  width: 130px;
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.nav-middle .search-box {
+.logo {
+  font-size: 28px;
+  color: red;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin-left: -4px;
+}
+
+.nav-middle {
+  flex: 1;
+  justify-content: center;
+  gap: 10px;
+  min-width: 300px;
+}
+
+.search-box {
   border: 1px solid #ccc;
-  margin-right: 15px;
-  padding: 8px 12px;
   border-radius: 25px;
+  padding: 6px 12px;
+  width: 100%;
+  max-width: 500px;
+  background: #f9f9f9;
 }
 
-.nav-middle .search-box input {
-  width: 400px;
-  border: 0;
-  outline: 0;
+.search-box input {
+  border: none;
+  outline: none;
   background: transparent;
+  flex: 1;
+  font-size: 14px;
+  padding-left: 8px;
 }
 
-.nav-middle .search-box img {
-  width: 15px;
+.search-icon {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
 }
 
-.nav-right img {
-  width: 25px;
-  margin-right: 25px;
+.mic-icon {
+  font-size: 40px;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.nav-right .user-icon {
-  width: 35px;
+.nav-right {
+  gap: 30px;
+}
+
+.nav-icon {
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+}
+
+.user-icon {
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
   border-radius: 50%;
 }
