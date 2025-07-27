@@ -6,11 +6,14 @@ import { RiVideoUploadLine } from "react-icons/ri";
 import { IoIosMore, IoIosMic } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 
-function Navbar() {
+function Navbar({ setSidebar }) {
   return (
     <nav className={`flex-div `}>
       <div className="nav-left flex-div">
-        <VscMenu className="menu-icon" />
+        <VscMenu
+          onClick={() => setSidebar((prev) => !prev)}
+          className="menu-icon"
+        />
         <IoLogoYoutube className="logo" />
         <span className="logo-text">YouTube</span>
       </div>
