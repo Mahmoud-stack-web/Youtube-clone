@@ -1,10 +1,8 @@
-/* Utility class */
 .flex-div {
   display: flex;
   align-items: center;
 }
 
-/* Navbar container */
 nav {
   padding: 10px 16px;
   justify-content: space-between;
@@ -15,7 +13,6 @@ nav {
   z-index: 1000;
 }
 
-/* Left section */
 .nav-left {
   gap: 16px;
 }
