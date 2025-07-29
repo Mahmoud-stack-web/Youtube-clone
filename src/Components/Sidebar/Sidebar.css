@@ -12,7 +12,7 @@
   --transition-mid: 0.3s ease;
 }
 
-/* Sidebar Container */
+
 .sidebar {
   width: var(--sidebar-width);
   height: 100vh;
@@ -27,19 +27,16 @@
   z-index: 100;
 }
 
-/* Collapsed Sidebar */
 .small-sidebar {
   width: var(--sidebar-collapsed-width);
   padding: 20px 5px;
 }
 
-/* Hide text in collapsed state */
 .small-sidebar .side-link p,
 .small-sidebar .subscribed-list h3 {
   display: none;
 }
 
-/* Tooltip for collapsed mode */
 .small-sidebar .side-link:hover::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -61,7 +58,6 @@
   }
 }
 
-/* Scrollbar Styling */
 .sidebar::-webkit-scrollbar {
   width: 6px;
 }
@@ -71,7 +67,6 @@
   border-radius: 3px;
 }
 
-/* Section Layout */
 .shortcut-links,
 .subscribed-list {
   display: flex;
@@ -87,7 +82,6 @@
   padding-left: 10px;
 }
 
-/* Side Links */
 .side-link {
   position: relative;
   display: flex;
@@ -104,7 +98,6 @@
   background: var(--hover-bg);
 }
 
-/* Icons (SVG) */
 .side-link svg {
   width: 24px;
   height: 24px;
@@ -112,7 +105,6 @@
   flex-shrink: 0;
 }
 
-/* Subscribed user images */
 .side-link img {
   width: 28px;
   height: 28px;
@@ -121,14 +113,12 @@
   flex-shrink: 0;
 }
 
-/* Labels */
 .side-link p {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1;
 }
 
-/* Active state */
 .side-link.active {
   background: rgba(229, 57, 53, 0.08);
   color: var(--active-color);
@@ -143,7 +133,6 @@
   filter: brightness(0) saturate(100%) invert(17%) sepia(75%) saturate(403%) hue-rotate(338deg) brightness(92%);
 }
 
-/* Active Indicator */
 .side-link.active::before {
   content: "";
   position: absolute;
@@ -155,14 +144,12 @@
   border-radius: 0 4px 4px 0;
 }
 
-/* Divider */
 hr {
   border: none;
   border-top: 1px solid #e2e2e2;
   margin: 16px 0;
 }
 
-/* Responsive collapse for mobile */
 @media (max-width: 600px) {
   .sidebar {
     width: var(--sidebar-collapsed-width);
