@@ -4,7 +4,7 @@ import { AiOutlineDislike } from "react-icons/ai";
 import { TbShare3 } from "react-icons/tb";
 import { FiSave } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import { API_KEY, value_converter } from "../../data";
+import { API_KEY, value_converter } from "../../data.js";
 import moment from "moment";
 import { useParams } from "react-router-dom";
 const PlayVideo = () => {
