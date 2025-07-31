@@ -210,3 +210,24 @@
     font-size: 0.8rem;
   }
 }
+
+@media(max-width:900px) {
+  .play-video {
+    flex-basis: 100%;
+  }
+
+  .play-video iframe {
+    height: 50vw;
+    width: 100%;
+  }
+
+  .vid-description {
+    padding-left: 0;
+  }
+
+  .play-video .play-video-info span {
+    margin-left: 0;
+    margin-right: 15px;
+    margin-top: 15px;
+  }
+}
