@@ -4,16 +4,17 @@ import { AiOutlineDislike } from "react-icons/ai";
 import { TbShare3 } from "react-icons/tb";
 import { FiSave } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import { API_KEY, value_converter } from "../../data.js";
+import { value_converter } from "../../utils.js";
 import moment from "moment";
 import { useParams } from "react-router-dom";
 const PlayVideo = () => {
+  const VITE_YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
   const { videoId } = useParams();
   const [apiData, setApiData] = useState(null);
   const [channelData, setChannelData] = useState(null);
   const [commentData, setCommentData] = useState([]);
   const fetchVideoData = async () => {
-    const videoDetails_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
+    const videoDetails_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${VITE_YOUTUBE_API_KEY}`;
     await fetch(videoDetails_url)
       .then((res) => res.json())
       .then((data) => setApiData(data.items[0]));
@@ -21,13 +22,13 @@ const PlayVideo = () => {
 
   const fetchOtherData = async () => {
     //fetching Channel Data
-    const channelData_url = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${apiData.snippet.channelId}&key=${API_KEY}`;
+    const channelData_url = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${apiData.snippet.channelId}&key=${VITE_YOUTUBE_API_KEY}`;
     await fetch(channelData_url)
       .then((res) => res.json())
       .then((data) => setChannelData(data.items[0]));
 
     //fetching Comment Data
-    const comment_url = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=50&videoId=${videoId}&key=${API_KEY}`;
+    const comment_url = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=50&videoId=${videoId}&key=${VITE_YOUTUBE_API_KEY}`;
     await fetch(comment_url)
       .then((res) => res.json())
       .then((data) => setCommentData(data.items));

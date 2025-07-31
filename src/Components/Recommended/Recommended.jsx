@@ -1,11 +1,12 @@
 import "./Recommended.css";
 import { useEffect, useState } from "react";
-import { API_KEY, value_converter } from "../../data";
+import { value_converter } from "../../utils.js";
 import { Link } from "react-router-dom";
 const Recommended = ({ categoryId }) => {
   const [apiData, setApiData] = useState([]);
+  const VITE_YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
   const fetchData = async () => {
-    const relatedVideo_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=45&regionCode=US&videoCategoryId=${categoryId}&key=${API_KEY}`;
+    const relatedVideo_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=45&regionCode=US&videoCategoryId=${categoryId}&key=${VITE_YOUTUBE_API_KEY}`;
     await fetch(relatedVideo_url)
       .then((res) => res.json())
       .then((data) => setApiData(data.items));
