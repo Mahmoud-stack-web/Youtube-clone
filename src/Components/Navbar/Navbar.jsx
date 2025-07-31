@@ -5,6 +5,7 @@ import { CiSearch } from "react-icons/ci";
 import { RiVideoUploadLine } from "react-icons/ri";
 import { IoIosMore, IoIosMic } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 function Navbar({ setSidebar }) {
   return (
@@ -14,8 +15,10 @@ function Navbar({ setSidebar }) {
           onClick={() => setSidebar((prev) => !prev)}
           className="menu-icon"
         />
-        <IoLogoYoutube className="logo" />
-        <span className="logo-text">YouTube</span>
+        <Link className="flex-div" to="/">
+          <IoLogoYoutube className="logo" />
+          <span className="logo-text">YouTube</span>
+        </Link>
       </div>
 
       <div className="nav-middle flex-div">

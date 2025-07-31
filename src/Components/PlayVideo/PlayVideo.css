@@ -19,11 +19,13 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.play-video video {
+.play-video iframe {
   width: 100%;
   border-radius: var(--radius);
   overflow: hidden;
+  height: 30vw;
 }
+
 
 .play-video h3 {
   margin-top: 12px;
@@ -193,6 +195,10 @@
   .play-video {
     flex-basis: 100%;
     padding: 12px;
+  }
+
+  .play-video iframe {
+    height: 50vw;
   }
 
   .vid-description {
