@@ -6,7 +6,9 @@ import { FiSave } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import { API_KEY, value_converter } from "../../data";
 import moment from "moment";
-const PlayVideo = ({ videoId }) => {
+import { useParams } from "react-router-dom";
+const PlayVideo = () => {
+  const { videoId } = useParams();
   const [apiData, setApiData] = useState(null);
   const [channelData, setChannelData] = useState(null);
   const [commentData, setCommentData] = useState([]);
@@ -32,9 +34,11 @@ const PlayVideo = ({ videoId }) => {
   };
   useEffect(() => {
     fetchVideoData();
-  }, []);
+  }, [videoId]);
   useEffect(() => {
-    fetchOtherData();
+    if (apiData) {
+      fetchOtherData();
+    }
   }, [apiData]);
   return (
     <div className="play-video">
@@ -43,7 +47,7 @@ const PlayVideo = ({ videoId }) => {
         height="396"
         src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
         title="How to NOT Fail a Technical Interview"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
@@ -102,11 +106,15 @@ const PlayVideo = ({ videoId }) => {
           return (
             <div key={index} className="comment">
               <img
-                src={item.snippet.topLevelComment.snippet.authorProfileImageUrl}
+                src={
+                  item?.snippet?.topLevelComment?.snippet
+                    ?.authorProfileImageUrl || ""
+                }
               />
               <div>
                 <h3>
-                  {item.snippet.topLevelComment.snippet.authorDisplayName}{" "}
+                  {item?.snippet?.topLevelComment?.snippet?.authorDisplayName ||
+                    ""}{" "}
                   <span>
                     {moment(
                       item.snippet.topLevelComment.snippet.updatedAt
